@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>Jesús Requena Pérez</title>
+   <meta name="description" content="">
+   <meta name="viewport" content="width=device-width, user-scalable=no">
+
+  
+   <link rel="stylesheet" href="css/normalize.css">
+   <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css ">
+   <link rel="stylesheet" href="js/jquery-ui-1.12.1/jquery-ui.theme.css">
+   <link rel="stylesheet" href="js/jquery-ui-1.12.1/jquery-ui.structure.css">  
+   <link rel="stylesheet" href="css/main.css">
+   <link rel="stylesheet" href="js/slick-1.8.0/slick/slick.css">
+   <link rel="stylesheet" href="js/slick-1.8.0/slick/slick-theme.css">
+
+   <script src="js/jquery-ui-1.12.1//external/jquery/jquery.js"></script>
+   <script src="js/jquery-ui-1.12.1/jquery-ui.js"></script>
+   <script src="js/slick-1.8.0/slick/slick.min.js"></script>
+
+
+   <script src="js/actividades.js"></script>
+   <script src="js/jquery-validate.js"></script>
+
+</head>
+<body>
+   <header>
+   <h1>DAWMANA</h1>
+   </header>
+   <div id="inicio"><img src="img/cartelSysmana.jpg"></div>
+   <div id="principal">
+   <nav>
+      <ul id="menu">
+         <li id="lactividades"><a href=""></a>Actividades</li>
+         <li id="lponentes"><a href=""></a>Ponentes</li>
+         <li id="asistentes"><a href=""></a>Asistentes</li>
+         <li id="sysmanas"><a href=""></a>Sysmanas</li>
+         <li id="login"><a href=""></a>Login</li>
+      </ul>
+   </nav>
+
+   <main>
+      <div id="actividades">
+      <h2>Actividades</h2>
+         <div id="tabs">
+            <ul>
+               <li><a href="#Lunes">Lunes</a></li>
+               <li><a href="#Martes">Martes</a></li>
+               <li><a href="#Miercoles">Miércoles</a></li>
+               <li><a href="#Jueves">Jueves</a></li>
+               <li><a href="#Viernes">Viernes</a></li>
+            </ul>
+            <div id="Lunes"></div>
+            <div id="Martes"></div>
+            <div id="Miercoles"></div>
+            <div id="Jueves"></div>
+            <div id="Viernes"></div>
+         </div>
+      </div>
+      <div id="ponentes">
+      <h2>Ponentes</h2>
+      </div>
+
+      <div id="FormAsistentes">
+         <h2>Asistentes</h2>
+         <form >
+            <div class="control-group input-append" >
+               <label for="nombre">Nombre</label>
+               <input type="text" id="nombre" data-validate="nombre"/>             
+            </div>
+            <div class="control-group input-append">
+               <label for="ap">Apellidos</label>
+               <input type="text" id="ap" data-validate="ap"/>             
+            </div>
+            <div class="control-group input-append">
+               <label for="dni">DNI</label>
+               <input type="text" id="dni" data-validate="dni"/>             
+            </div>
+            <div class="control-group input-append">
+               <label for="email">E-mail</label>
+               <input type="text" id="email"  data-validate="email"/>             
+            </div>       
+            <div class="control-group input-append">
+               <label for="procedencia">Procedencia</label>
+               <select id="opciones" name="opciones" data-validate="opciones">
+                  <option value="ies">IES</option>
+                  <option value="universidad">Universidad</option>
+                  <option value="empresa">Empresa</option>
+               </select><br><br>
+            </div>
+            <div class="btn-group">
+               <input type="submit" id="registrarse" /> 
+            </div>
+         </form>  
+      </div>
+
+      <div id="AllSysmanas">
+      </div>
+
+      <div id="FormLogin">
+         <h2>LOGIN</h2>
+         <form >
+            <div class="control-group input-append">
+               <label for="usuario">Usuario</label>
+               <input type="text" name="usuario" id="user" data-validate="usuario"/>
+            </div>
+            <div class="control-group input-append">        
+               <label for="pass">Contraseña</label>
+               <input type="password" name="pass" id="pass" data-validate="pass"/>
+            </div>
+            <div class="btn-group">
+               <input type="button" id="enviarLogin" value="Entrar" />
+            </div>        
+            
+         </form>  
+      </div>
+
+      <div id="FormEditar">
+         <h2>Editar datos</h2>
+         <form >        
+
+            <div class="control-group input-append">
+               <label id="lblNombre" for="nombre">Nombre:</label>
+               <input class="formControl" type="text" name="nombre" id="nombrePonen" placeholder="Nombre" data-validate="nombre2">        
+            </div>
+            <div class="control-group input-append">  
+               <label id="lblApellidos" for="apellidos">Apellidos</label>
+               <input class="formControl" type="text" name="apellidos" id="apellidosPonen" placeholder="Apellidos" data-validate="ap2">      
+               </div>
+            <div class="control-group input-append">    
+               <label id="lblProcedencia" for="procedencia">Procedencia</label>
+               <input class="formControl" type="text" name="procedencia" id="procedencia" placeholder="Procedencia" data-validate="proce">
+            </div>
+            <label for="diasPreferibles">Fecha inicio:</label>
+            <input class="formControl" type="text" name="diasPreferiblesFrom" id="diasPreferiblesFrom" placeholder="Primer día">
+            <label for="diasPreferibles">Fecha final:</label>
+            <input class="formControl" type="text" name="diasPreferiblesTo" id="diasPreferiblesTo" placeholder="Día final">
+
+            <div class="control-group input-append">        
+               <label for="observaciones">Observaciones:</label>
+               <textarea class="formControl" name="observaciones" id="observaciones" cols="30" rows="6" placeholder="Observaciones" data-validate="obser"></textarea>
+            </div>
+
+            <div class="control-group input-append">
+               <label for="patrocinio" id="lblPatrocinio">¿Puede patrocinarnos?</label>
+               <input name="patrocinio" id="patrocinio" type="checkbox"><br><br>
+            </div>
+
+            <div class="btn-group">
+               <input type="submit" id="editData" value="Guardar cambios" />
+            </div>
+         </form>  
+      </div>
+
+      <div id="FormRegistro">
+         <h2>Nueva ponencia</h2>
+         <form >          
+
+            <div class="control-group input-append">
+               <label for='nombreActividad'>Nombre de la actividad:</label>
+               <input class='formControl' type='text' id='nombreActividad' name='nombreActividad' placeholder='Nombre de la actividad...'  data-validate="nombre3">          
+            </div>
+            <div class="control-group input-append">
+               <label for='descBreve'>Descripción breve</label>
+               <input class='formControl' type='text' id='descBreve' name='descBreve' placeholder='Breve descripción...'  data-validate="desc">
+            </div>
+            <div class="control-group input-append">
+               <label for='descExt'>Descripción extensa:</label>
+               <textarea class='formControl' name='descExt' id='descExt' cols='30' rows='10' placeholder='Descripción extensa...'  data-validate="descEx"></textarea>          
+            </div>
+            <div class="control-group input-append">
+               <label for='imagen'>Imagen:</label>
+               <input type='file' id='imagen' name='imagen'  data-validate="imagen">   
+            </div>       
+            <div class="control-group input-append">
+               <label for='materialPonente'>Material para el ponente:</label>
+               <input class='formControl' type='text' id='materialPonente' name='materialPonente' placeholder='Material Ponente' data-validate="matpon">          
+               </div>
+            <div class="control-group input-append">
+               <label for='materialAsistentes'>Material para los asistentes:</label>
+               <input class='formControl' type='text' id='materialAsistentes' name='materialAsistentes' placeholder='Equipo, Windows/Linux, Eclipse, Navegador, Editor de textos...' data-validate="materialAsistentes">          
+               </div>
+            <div class="control-group input-append">
+               <label for='numAsistentes'>Número de asistentes recomendados:</label>
+               <input class='formControl' type='number' id='numAsistentes' name='numAsistentes' placeholder='Número de asistentes recomendados...' data-validate="numAsistentes">
+               </div>
+
+            <div class="btn-group">
+               <input type="submit" id="btnCrearPonencia" value='Crear ponencia' /> 
+            </div>
+         </form>  
+      </div>
+      
+   </main>
+   </div>
+   <footer>
+      <ul>
+         <li><img src="img/junta.jpg" alt=""></li>
+         <li><img src="img/Innovation_Group.png" alt=""></li>
+         <li><img src="img/Lazona.png" alt="">
+         <li><img src="img/dobuss.jpeg" alt=""></li>
+      </ul>
+   </footer>
+   
+
+</body>
+
+</html>
