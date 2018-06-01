@@ -85,7 +85,6 @@ let funcionCrear = function(){
    //validacion   FormRegistro
    $('#FormRegistro>form').validate({
    onBlur : true,
-   onSubmit  : false,
    eachValidField : function() {
      $(this).closest('div').removeClass('error').addClass('success');
    },
@@ -355,15 +354,10 @@ let formLogin = function(){
       onBlur : true,
       eachValidField : function() {
         $(this).closest('div').removeClass('error').addClass('success');
-        
-      $vali = true;
-        return true;
+
       },
       eachInvalidField : function() {
         $(this).closest('div').removeClass('success').addClass('error');
-        
-      $vali = false;
-        return false;
       }
    });
    $.validateExtend({
@@ -385,7 +379,18 @@ let formLogin = function(){
   
    $("#user").val("jesus");
    $("#pass").val("Jesus123456");
-   $('#enviarLogin').on('click', login);
+   $('#enviarLogin').on('click', function() {
+   if ($("#user").val() === "jesus" && $("#pass").val() === "Jesus123456") {
+      cargarMenuPonenteLogeado();
+      $("#errorLogin").text('');
+      valfechas();
+      funcionCrear();
+      $("#editar").on('click', funcionEditar);
+      $("#crear").on('click', funcionCrear);
+   } else {
+      $("#errorLogin").text("El usuario o la contraseña no coinciden");
+   }
+   });
     
 }
 let cargarMenuPonenteLogeado = function () {
@@ -396,21 +401,6 @@ let cargarMenuPonenteLogeado = function () {
    $('#cerrarSesion').on('click',logout)
 
       $("#crear").click(funcionCrear); 
-};
-
-let login = function () {
-   $('main').children().hide();
-   $('#FormRegistro').show('faster');
-   if ($("#user").val() === "jesus" && $("#pass").val() === "Jesus123456") {
-      cargarMenuPonenteLogeado();
-      $("#errorLogin").text('');
-      valfechas();
-      $("#crear").click(funcionCrear);
-      $("#editar").on('click', funcionEditar);
-      $("#crear").on('click', funcionCrear);
-   } else {
-      $("#errorLogin").text("El usuario o la contraseña no coinciden");
-   }
 };
 
 let logout = function(){

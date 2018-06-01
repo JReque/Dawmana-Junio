@@ -15,7 +15,6 @@ body>header{
 }
 nav{
 	grid-area: nav;
-	padding-top: 5%;
 	background-color: white;
 	width: 20vw;	
 	height: 70vh;
@@ -118,6 +117,9 @@ main{
 }
 .fotoCartel{
 	width: 100%;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 
+	0 1px 5px 0 rgba(0, 0, 0, 0.12), 
+	0 3px 1px -2px rgba(0, 0, 0, 0.2);
 }
 
 #carrusel img {
@@ -130,6 +132,8 @@ main{
     padding: 4%;
 	background-color: white;
     display: table;
+     position: relative;
+    left: 10%;
 }
 #FormAsistentes>form, #FormLogin>form, #FormEditar>form, #FormRegistro>form{
 	display: grid;
@@ -144,6 +148,19 @@ main{
     right: calc(100vw - 95vw);
 }
 
+input[type="submit"], input[type="button"] , button{
+
+    -webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0px;
+	font-family: Arial;
+	color: #ffffff;
+	font-size: 20px;
+	background: #19b369;
+	padding: 10px 20px 10px 20px;
+	text-decoration: none;
+	border: none;
+}
 footer{
 	background-color: #303f9f;
 }
